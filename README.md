@@ -4,7 +4,7 @@
 -----
 
 <h3 align="center"> 
-  <img src="https://github.com/jpgSouza/my-resume-app/blob/main/Mock%20Up.svg" >
+  <img src="https://github.com/jpgSouza/my-resume-app/blob/master/MockUp.svg" >
 </h3>
 
 -----
