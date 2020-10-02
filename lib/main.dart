@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
 import 'package:my_resume_app/src/views/auth/login_view.dart';
+import 'package:my_resume_app/src/views/auth/register_view.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,6 +12,6 @@ class MyApp extends StatelessWidget {
         title: "My Resume",
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primaryColor: primaryColor, fontFamily: font),
-        home: LoginView());
+        home: RegisterView());
   }
 }

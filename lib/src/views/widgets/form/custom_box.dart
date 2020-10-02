@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
 
-class LoginBox extends StatelessWidget {
+class CustomBox extends StatelessWidget {
   final double height;
   final Widget widget;
 
-  LoginBox(this.height, this.widget);
+  CustomBox(this.height, this.widget);
 
   @override
   Widget build(BuildContext context) {

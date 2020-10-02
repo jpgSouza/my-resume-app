@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_resume_app/constants.dart';
+import 'package:my_resume_app/src/views/auth/register_view.dart';
 import 'package:my_resume_app/src/views/widgets/buttons/custom_button.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_box.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_input_fields.dart';
@@ -37,58 +38,53 @@ class LoginView extends StatelessWidget {
                   left: 0.0,
                   right: 0.0,
                   bottom: 255.0,
-                  child: LoginBox(
-                      188.0,
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              InputFields(
-                                  Icon(
-                                    Icons.email,
-                                    color: Colors.white,
-                                  ),
-                                  null,
-                                  "E-mail",
-                                  TextInputType.emailAddress,
-                                  false),
-                              Container(
-                                  padding: EdgeInsets.all(2.0),
-                                  decoration: BoxDecoration(
-                                      border: Border(
-                                          bottom: BorderSide(
-                                              color: Colors.white)))),
-                              InputFields(
-                                  Icon(
-                                    Icons.vpn_key,
-                                    color: Colors.white,
-                                  ),
-                                  IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(Icons.remove_red_eye),
-                                    color: Colors.white,
-                                  ),
-                                  "Senha",
-                                  TextInputType.text,
-                                  true),
-                              Align(
-                                alignment: Alignment.centerRight,
-                                child: FlatButton(
-                                  padding: EdgeInsets.zero,
-                                  onPressed: () {},
-                                  child: Text(
-                                    "Esqueceu sua senha?",
-                                    textAlign: TextAlign.right,
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ),
-                              ),
-                            ],
+                  child: CustomBox(
+                    188.0,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        InputFields(
+                            Icon(
+                              Icons.email,
+                              color: Colors.white,
+                            ),
+                            null,
+                            "E-mail",
+                            TextInputType.emailAddress,
+                            false),
+                        Container(
+                            padding: EdgeInsets.all(2.0),
+                            decoration: BoxDecoration(
+                                border: Border(
+                                    bottom: BorderSide(color: Colors.white)))),
+                        InputFields(
+                            Icon(
+                              Icons.vpn_key,
+                              color: Colors.white,
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.remove_red_eye),
+                              color: Colors.white,
+                            ),
+                            "Senha",
+                            TextInputType.text,
+                            true),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: FlatButton(
+                            padding: EdgeInsets.zero,
+                            onPressed: () {},
+                            child: Text(
+                              "Esqueceu sua senha?",
+                              textAlign: TextAlign.right,
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
-                        ],
-                      ))),
+                        ),
+                      ],
+                    ),
+                  )),
               Positioned(
                 right: 0.0,
                 left: 0.0,
@@ -155,30 +151,31 @@ class LoginView extends StatelessWidget {
                 right: 0.0,
                 bottom: 20.0,
                 child: Align(
-                  alignment: Alignment.center,
-                  child: FlatButton(
-                      padding: EdgeInsets.zero,
-                      child: FlatButton(
-                          onPressed: () {},
-                          padding: EdgeInsets.zero,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                "Não possui conta?",
-                                style: TextStyle(color: Colors.black),
-                              ),
-                              SizedBox(
-                                width: 6.0,
-                              ),
-                              Text("Cadastre-se",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold)),
-                            ],
-                          ))),
-                ),
-              )
+                    alignment: Alignment.center,
+                    child: FlatButton(
+                        onPressed: () {
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (context) => RegisterView()));
+                        },
+                        padding: EdgeInsets.zero,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              "Não possui conta?",
+                              style: TextStyle(color: Colors.black),
+                            ),
+                            SizedBox(
+                              width: 6.0,
+                            ),
+                            Text("Cadastre-se",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold)),
+                          ],
+                        ))),
+              ),
             ],
           ),
         ),
