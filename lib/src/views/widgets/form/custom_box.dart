@@ -4,14 +4,15 @@ import 'package:my_resume_app/constants.dart';
 class CustomBox extends StatelessWidget {
   final double height;
   final Widget widget;
+  final double vertical;
 
-  CustomBox(this.height, this.widget);
+  CustomBox(this.height, this.widget, this.vertical);
 
   @override
   Widget build(BuildContext context) {
     return Container(
         alignment: Alignment.center,
-        margin: EdgeInsets.symmetric(horizontal: 25.0),
+        margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: this.vertical),
         padding:
             EdgeInsets.only(left: 30.0, right: 30.0, top: 25.0, bottom: 10.0),
         width: 369.0,

@@ -39,54 +39,55 @@ class LoginView extends StatelessWidget {
                   right: 0.0,
                   bottom: 255.0,
                   child: CustomBox(
-                    188.0,
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        InputFields(
-                            Icon(
-                              Icons.email,
-                              color: Colors.white,
-                            ),
-                            null,
-                            "E-mail",
-                            TextInputType.emailAddress,
-                            false,
-                            Colors.white),
-                        Container(
-                            padding: EdgeInsets.all(2.0),
-                            decoration: BoxDecoration(
-                                border: Border(
-                                    bottom: BorderSide(color: Colors.white)))),
-                        InputFields(
-                            Icon(
-                              Icons.vpn_key,
-                              color: Colors.white,
-                            ),
-                            IconButton(
+                      188.0,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InputFields(
+                              Icon(
+                                Icons.email,
+                                color: Colors.white,
+                              ),
+                              null,
+                              "E-mail",
+                              TextInputType.emailAddress,
+                              false,
+                              Colors.white),
+                          Container(
+                              padding: EdgeInsets.all(2.0),
+                              decoration: BoxDecoration(
+                                  border: Border(
+                                      bottom:
+                                          BorderSide(color: Colors.white)))),
+                          InputFields(
+                              Icon(
+                                Icons.vpn_key,
+                                color: Colors.white,
+                              ),
+                              IconButton(
+                                onPressed: () {},
+                                icon: Icon(Icons.remove_red_eye),
+                                color: Colors.white,
+                              ),
+                              "Senha",
+                              TextInputType.text,
+                              true,
+                              Colors.white),
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: FlatButton(
+                              padding: EdgeInsets.zero,
                               onPressed: () {},
-                              icon: Icon(Icons.remove_red_eye),
-                              color: Colors.white,
-                            ),
-                            "Senha",
-                            TextInputType.text,
-                            true,
-                            Colors.white),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: FlatButton(
-                            padding: EdgeInsets.zero,
-                            onPressed: () {},
-                            child: Text(
-                              "Esqueceu sua senha?",
-                              textAlign: TextAlign.right,
-                              style: TextStyle(color: Colors.white),
+                              child: Text(
+                                "Esqueceu sua senha?",
+                                textAlign: TextAlign.right,
+                                style: TextStyle(color: Colors.white),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  )),
+                        ],
+                      ),
+                      0.0)),
               Positioned(
                 right: 0.0,
                 left: 0.0,
