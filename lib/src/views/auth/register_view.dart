@@ -56,7 +56,8 @@ class RegisterView extends StatelessWidget {
                                 null,
                                 "Nome",
                                 TextInputType.text,
-                                false),
+                                false,
+                                Colors.white),
                             Container(
                                 padding: EdgeInsets.all(2.0),
                                 decoration: BoxDecoration(
@@ -71,7 +72,8 @@ class RegisterView extends StatelessWidget {
                                 null,
                                 "E-mail",
                                 TextInputType.emailAddress,
-                                true),
+                                false,
+                                Colors.white),
                             Container(
                                 padding: EdgeInsets.all(2.0),
                                 decoration: BoxDecoration(
@@ -89,7 +91,8 @@ class RegisterView extends StatelessWidget {
                                 ),
                                 "Senha",
                                 TextInputType.text,
-                                true),
+                                true,
+                                Colors.white),
                             Container(
                                 padding: EdgeInsets.all(2.0),
                                 decoration: BoxDecoration(
@@ -107,7 +110,8 @@ class RegisterView extends StatelessWidget {
                                 ),
                                 "Confirmar senha",
                                 TextInputType.text,
-                                true),
+                                true,
+                                Colors.white),
                           ],
                         ))),
                 Positioned(

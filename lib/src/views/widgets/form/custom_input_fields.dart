@@ -6,14 +6,15 @@ class InputFields extends StatelessWidget {
   final String hint;
   final TextInputType textInputType;
   final bool obscure;
+  final Color color;
 
   InputFields(this.prefixIcon, this.suffixIcon, this.hint, this.textInputType,
-      this.obscure);
+      this.obscure, this.color);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      style: TextStyle(color: Colors.white),
+      style: TextStyle(color: this.color),
       obscureText: this.obscure,
       keyboardType: this.textInputType,
       decoration: InputDecoration(
@@ -21,7 +22,7 @@ class InputFields extends StatelessWidget {
           prefixIcon: this.prefixIcon,
           suffixIcon: this.suffixIcon,
           hintText: this.hint,
-          hintStyle: TextStyle(color: Colors.white)),
+          hintStyle: TextStyle(color: this.color)),
     );
   }
 }
