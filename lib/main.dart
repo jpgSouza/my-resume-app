@@ -13,6 +13,6 @@ class MyApp extends StatelessWidget {
         title: "My Resume",
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primaryColor: primaryColor, fontFamily: font),
-        home: BottomNavigator());
+        home: LoginView());
   }
 }

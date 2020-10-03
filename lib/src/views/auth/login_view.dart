@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_resume_app/constants.dart';
 import 'package:my_resume_app/src/views/auth/register_view.dart';
 import 'package:my_resume_app/src/views/widgets/buttons/custom_button.dart';
+import 'package:my_resume_app/src/views/widgets/custom_divider.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_box.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_input_fields.dart';
 
@@ -100,27 +101,9 @@ class LoginView extends StatelessWidget {
                   left: 25.0,
                   right: 25.0,
                   child: Container(
-                    alignment: Alignment.center,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Container(
-                          color: primaryColor,
-                          width: 145,
-                          height: 1,
-                        ),
-                        Text(
-                          "OU",
-                          style: TextStyle(color: secondaryColor),
-                        ),
-                        Container(
-                          color: primaryColor,
-                          width: 145,
-                          height: 1,
-                        ),
-                      ],
-                    ),
-                  )),
+                      alignment: Alignment.center,
+                      child:
+                          CustomDivider(primaryColor, "OU", secondaryColor))),
               Positioned(
                   bottom: 80.0,
                   left: 75.0,
