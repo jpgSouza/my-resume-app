@@ -87,7 +87,8 @@ class LoginView extends StatelessWidget {
                           ),
                         ],
                       ),
-                      0.0)),
+                      0.0,
+                      primaryColor)),
               Positioned(
                 right: 0.0,
                 left: 0.0,

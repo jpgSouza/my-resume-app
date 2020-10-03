@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
+import 'package:my_resume_app/src/views/user/my_resume.dart';
 
 class ResumeTile extends StatelessWidget {
   @override
@@ -80,7 +81,12 @@ class ResumeTile extends StatelessWidget {
                                             topLeft: Radius.circular(6.0),
                                             bottomLeft: Radius.circular(6.0))),
                                     child: GestureDetector(
-                                      onTap: () {},
+                                      onTap: () {
+                                        Navigator.of(context).pushReplacement(
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    MyResume()));
+                                      },
                                       child: Icon(
                                         Icons.remove_red_eye,
                                         color: Colors.white,

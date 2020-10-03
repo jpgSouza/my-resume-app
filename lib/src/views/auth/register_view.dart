@@ -32,13 +32,17 @@ class RegisterView extends StatelessWidget {
                     )),
                 Positioned(
                     left: 0.0,
-                    child: RoundedButton(BackButton(
-                      color: primaryColor,
-                      onPressed: () {
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (context) => LoginView()));
-                      },
-                    ))),
+                    child: RoundedButton(
+                        BackButton(
+                          color: primaryColor,
+                          onPressed: () {
+                            Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                    builder: (context) => LoginView()));
+                          },
+                        ),
+                        50.0,
+                        50.0)),
                 Positioned(
                     left: 0.0,
                     right: 0.0,
@@ -114,7 +118,8 @@ class RegisterView extends StatelessWidget {
                                 Colors.white),
                           ],
                         ),
-                        0.0)),
+                        0.0,
+                        primaryColor)),
                 Positioned(
                     right: 0.0,
                     left: 0.0,

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CustomBox extends StatelessWidget {
+class ResumeBox extends StatelessWidget {
   final double height;
   final Widget widget;
   final double vertical;
   final Color color;
 
-  CustomBox(this.height, this.widget, this.vertical, this.color);
+  ResumeBox(this.height, this.widget, this.vertical, this.color);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class CustomBox extends StatelessWidget {
         alignment: Alignment.center,
         margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: this.vertical),
         padding:
-            EdgeInsets.only(left: 30.0, right: 30.0, top: 25.0, bottom: 10.0),
+            EdgeInsets.only(left: 15.0, right: 15.0, top: 15.0, bottom: 10.0),
         width: 369.0,
         height: this.height,
         decoration: BoxDecoration(
@@ -22,7 +22,7 @@ class CustomBox extends StatelessWidget {
           borderRadius: BorderRadius.circular(6.0),
           boxShadow: [
             BoxShadow(
-                color: Colors.black26, blurRadius: 10.0, offset: Offset(8, 15))
+                color: Colors.black26, blurRadius: 16.0, offset: Offset(4, 8))
           ],
         ),
         child: this.widget);

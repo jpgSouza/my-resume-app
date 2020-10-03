@@ -19,7 +19,12 @@ class NewResume extends StatelessWidget {
               padding: EdgeInsets.only(top: 15.0, bottom: 8.0),
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.2,
-              color: buttonColor,
+              decoration: BoxDecoration(color: buttonColor, boxShadow: [
+                BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 8.0,
+                    offset: Offset(1.5, 8.0))
+              ]),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -56,7 +61,9 @@ class NewResume extends StatelessWidget {
                 580.0,
                 Column(
                   children: [
-                    Text("Perfil", style: TextStyle(color: Colors.white)),
+                    Text("Perfil",
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold)),
                     InputFields(
                         Icon(
                           Icons.person,
@@ -70,7 +77,9 @@ class NewResume extends StatelessWidget {
                     Container(
                         decoration: BoxDecoration(
                             border: Border(
-                                bottom: BorderSide(color: Colors.white)))),
+                                bottom: BorderSide(
+                      color: Colors.white,
+                    )))),
                     InputFields(
                         Icon(
                           Icons.phone,
@@ -102,8 +111,7 @@ class NewResume extends StatelessWidget {
                                 bottom: BorderSide(color: Colors.white)))),
                     Text("Habilidades",
                         style: TextStyle(
-                          color: Colors.white,
-                        )),
+                            color: Colors.white, fontWeight: FontWeight.bold)),
                     InputFields(
                         Icon(
                           Icons.title_rounded,
@@ -119,13 +127,14 @@ class NewResume extends StatelessWidget {
                         decoration: BoxDecoration(
                             border: Border(
                                 bottom: BorderSide(color: Colors.white)))),
-                    CustomTextArea(),
+                    CustomTextArea("Resumo", Colors.white, null, Colors.black),
                     SizedBox(
                       height: 10.0,
                     ),
                     Text(
                       "Curso",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                     InputFields(
                         Icon(
@@ -167,9 +176,15 @@ class NewResume extends StatelessWidget {
                         TextInputType.datetime,
                         false,
                         Colors.white),
+                    Container(
+                        margin: EdgeInsets.only(bottom: 10.0),
+                        decoration: BoxDecoration(
+                            border: Border(
+                                bottom: BorderSide(color: Colors.white)))),
                   ],
                 ),
-                25.0),
+                25.0,
+                primaryColor),
             CustomButton("CRIAR"),
             SizedBox(
               height: 25.0,
