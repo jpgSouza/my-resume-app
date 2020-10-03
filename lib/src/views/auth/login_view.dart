@@ -52,7 +52,9 @@ class LoginView extends StatelessWidget {
                               "E-mail",
                               TextInputType.emailAddress,
                               false,
-                              Colors.white),
+                              Colors.white,
+                              null,
+                              null),
                           Container(
                               padding: EdgeInsets.all(2.0),
                               decoration: BoxDecoration(
@@ -72,7 +74,9 @@ class LoginView extends StatelessWidget {
                               "Senha",
                               TextInputType.text,
                               true,
-                              Colors.white),
+                              Colors.white,
+                              null,
+                              null),
                           Align(
                             alignment: Alignment.centerRight,
                             child: FlatButton(

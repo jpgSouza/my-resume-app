@@ -4,17 +4,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 class FirebaseDB {
   Firestore firestore;
   FirebaseAuth firebaseAuth;
+  FirebaseUser firebaseUser;
 
   FirebaseDB() {
     firestore = Firestore.instance;
     firebaseAuth = FirebaseAuth.instance;
   }
 
-  String getApp() {
-    return firestore.app.toString();
-  }
-
-  Future<Null> createDoc(Map<String, dynamic> data) async {
-    await firestore.collection("test").document('doc-test').setData(data);
+  Future<Null> saveOnCloudFirestore(
+      Map<String, dynamic> data, String collection) async {
+    firestore.collection(collection).document(firebaseUser.uid).setData(data);
   }
 }

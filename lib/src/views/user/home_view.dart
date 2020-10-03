@@ -31,18 +31,19 @@ class _HomeViewState extends State<HomeView> {
                           offset: Offset(4, 4))
                     ]),
                 child: InputFields(
-                  null,
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.search),
-                    color: primaryColor,
-                    padding: EdgeInsets.zero,
-                  ),
-                  "Pesquisar...",
-                  TextInputType.text,
-                  false,
-                  Colors.grey[400],
-                )),
+                    null,
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.search),
+                      color: primaryColor,
+                      padding: EdgeInsets.zero,
+                    ),
+                    "Pesquisar...",
+                    TextInputType.text,
+                    false,
+                    Colors.grey[400],
+                    null,
+                    null)),
             SizedBox(
               height: 30.0,
             ),

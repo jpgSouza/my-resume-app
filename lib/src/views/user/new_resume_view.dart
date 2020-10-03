@@ -45,7 +45,9 @@ class NewResume extends StatelessWidget {
                               "Nome do arquivo",
                               TextInputType.text,
                               false,
-                              Colors.white),
+                              Colors.white,
+                              null,
+                              null),
                           Container(
                               decoration: BoxDecoration(
                                   border: Border(
@@ -72,7 +74,9 @@ class NewResume extends StatelessWidget {
                         "Nome completo",
                         TextInputType.text,
                         false,
-                        Colors.white),
+                        Colors.white,
+                        null,
+                        null),
                     Container(
                         decoration: BoxDecoration(
                             border: Border(
@@ -88,7 +92,9 @@ class NewResume extends StatelessWidget {
                         "Telefone",
                         TextInputType.number,
                         false,
-                        Colors.white),
+                        Colors.white,
+                        null,
+                        null),
                     Container(
                         decoration: BoxDecoration(
                             border: Border(
@@ -102,7 +108,9 @@ class NewResume extends StatelessWidget {
                         "E-mail",
                         TextInputType.emailAddress,
                         false,
-                        Colors.white),
+                        Colors.white,
+                        null,
+                        null),
                     Container(
                         margin: EdgeInsets.only(bottom: 10.0),
                         decoration: BoxDecoration(
@@ -120,7 +128,9 @@ class NewResume extends StatelessWidget {
                         "Titulo",
                         TextInputType.text,
                         false,
-                        Colors.white),
+                        Colors.white,
+                        null,
+                        null),
                     Container(
                         margin: EdgeInsets.only(bottom: 10.0),
                         decoration: BoxDecoration(
@@ -144,7 +154,9 @@ class NewResume extends StatelessWidget {
                         "Titulo do curso",
                         TextInputType.text,
                         false,
-                        Colors.white),
+                        Colors.white,
+                        null,
+                        null),
                     Container(
                         margin: EdgeInsets.only(bottom: 10.0),
                         decoration: BoxDecoration(
@@ -159,7 +171,9 @@ class NewResume extends StatelessWidget {
                         "Data de inicio",
                         TextInputType.datetime,
                         false,
-                        Colors.white),
+                        Colors.white,
+                        null,
+                        null),
                     Container(
                         margin: EdgeInsets.only(bottom: 10.0),
                         decoration: BoxDecoration(
@@ -174,7 +188,9 @@ class NewResume extends StatelessWidget {
                         "Instituição",
                         TextInputType.datetime,
                         false,
-                        Colors.white),
+                        Colors.white,
+                        null,
+                        null),
                     Container(
                         margin: EdgeInsets.only(bottom: 10.0),
                         decoration: BoxDecoration(
