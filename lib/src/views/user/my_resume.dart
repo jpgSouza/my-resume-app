@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
 import 'package:my_resume_app/src/views/widgets/buttons/custom_rounded_button.dart';
-import 'package:my_resume_app/src/views/widgets/form/custom_box.dart';
+import 'package:my_resume_app/src/views/widgets/custom_divider.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_resume_box.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_text_area.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_text_form_field.dart';
@@ -119,25 +119,8 @@ class MyResume extends StatelessWidget {
                           )),
                         ],
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            color: buttonColor,
-                            width: 110,
-                            height: 1,
-                          ),
-                          Text(
-                            "Habilidade",
-                            style: TextStyle(color: buttonColor),
-                          ),
-                          Container(
-                            color: buttonColor,
-                            width: 110,
-                            height: 1,
-                          ),
-                        ],
-                      ),
+                      CustomDivider(
+                          buttonColor, "Habilidade", buttonColor, 110.0),
                       Column(
                         children: [
                           ResumeField(
@@ -159,25 +142,7 @@ class MyResume extends StatelessWidget {
                       SizedBox(
                         height: 10.0,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            color: buttonColor,
-                            width: 110,
-                            height: 1,
-                          ),
-                          Text(
-                            "Curso",
-                            style: TextStyle(color: buttonColor),
-                          ),
-                          Container(
-                            color: buttonColor,
-                            width: 110,
-                            height: 1,
-                          ),
-                        ],
-                      ),
+                      CustomDivider(buttonColor, "Curso", buttonColor, 110.0),
                       Column(
                         children: [
                           ResumeField(

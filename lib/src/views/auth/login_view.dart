@@ -102,8 +102,8 @@ class LoginView extends StatelessWidget {
                   right: 25.0,
                   child: Container(
                       alignment: Alignment.center,
-                      child:
-                          CustomDivider(primaryColor, "OU", secondaryColor))),
+                      child: CustomDivider(
+                          primaryColor, "OU", secondaryColor, 145.0))),
               Positioned(
                   bottom: 80.0,
                   left: 75.0,

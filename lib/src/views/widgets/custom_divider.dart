@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
-
 class CustomDivider extends StatelessWidget {
   final Color color;
   final String text;
   final Color textColor;
 
-  CustomDivider(this.color, this.text, this.textColor);
+  final double width;
+
+  CustomDivider(this.color, this.text, this.textColor, this.width);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class CustomDivider extends StatelessWidget {
       children: <Widget>[
         Container(
           color: this.color,
-          width: 145,
+          width: this.width,
           height: 1,
         ),
         Text(
@@ -25,7 +25,7 @@ class CustomDivider extends StatelessWidget {
         ),
         Container(
           color: this.color,
-          width: 145,
+          width: this.width,
           height: 1,
         ),
       ],
