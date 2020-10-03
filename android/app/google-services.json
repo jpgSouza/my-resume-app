@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "456952942294",
+    "firebase_url": "https://my-resume-app-aeb05.firebaseio.com",
+    "project_id": "my-resume-app-aeb05",
+    "storage_bucket": "my-resume-app-aeb05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456952942294:android:a6e427b2e95055ed340377",
+        "android_client_info": {
+          "package_name": "com.example.my_resume_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456952942294-clro1cs0frvuri300aknkdko8fn9knab.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvlahTE1fGhM4GEG3brICMC1Se_vUFx3Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456952942294-clro1cs0frvuri300aknkdko8fn9knab.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

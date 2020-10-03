@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
-import 'package:my_resume_app/src/views/widgets/buttons/custom_button.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_box.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_input_fields.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_text_area.dart';
@@ -185,7 +184,33 @@ class NewResume extends StatelessWidget {
                 ),
                 25.0,
                 primaryColor),
-            CustomButton("CRIAR"),
+            Container(
+              height: 55.0,
+              alignment: Alignment.center,
+              child: RaisedButton(
+                onPressed: () {},
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0)),
+                padding: EdgeInsets.all(0.0),
+                child: Ink(
+                    decoration: BoxDecoration(
+                        color: buttonColor,
+                        borderRadius: BorderRadius.circular(8.0)),
+                    child: Container(
+                      constraints:
+                          BoxConstraints(maxWidth: 215.0, minHeight: 60.0),
+                      alignment: Alignment.center,
+                      child: Text(
+                        "CRIAR",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15.0,
+                        ),
+                      ),
+                    )),
+              ),
+            ),
             SizedBox(
               height: 25.0,
             )

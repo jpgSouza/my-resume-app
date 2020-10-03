@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_resume_app/constants.dart';
 import 'package:my_resume_app/src/views/auth/register_view.dart';
-import 'package:my_resume_app/src/views/widgets/buttons/custom_button.dart';
 import 'package:my_resume_app/src/views/widgets/custom_divider.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_box.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_input_fields.dart';
@@ -94,7 +93,33 @@ class LoginView extends StatelessWidget {
                 right: 0.0,
                 left: 0.0,
                 bottom: 170.0,
-                child: CustomButton("LOGIN"),
+                child: Container(
+                  height: 55.0,
+                  alignment: Alignment.center,
+                  child: RaisedButton(
+                    onPressed: () {},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0)),
+                    padding: EdgeInsets.all(0.0),
+                    child: Ink(
+                        decoration: BoxDecoration(
+                            color: buttonColor,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: Container(
+                          constraints:
+                              BoxConstraints(maxWidth: 215.0, minHeight: 60.0),
+                          alignment: Alignment.center,
+                          child: Text(
+                            "LOGIN",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15.0,
+                            ),
+                          ),
+                        )),
+                  ),
+                ),
               ),
               Positioned(
                   bottom: 140.0,

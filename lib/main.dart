@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
 import 'package:my_resume_app/src/views/auth/login_view.dart';
@@ -13,6 +14,6 @@ class MyApp extends StatelessWidget {
         title: "My Resume",
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primaryColor: primaryColor, fontFamily: font),
-        home: BottomNavigator());
+        home: LoginView());
   }
 }
