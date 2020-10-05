@@ -4,8 +4,8 @@ addons:
   apt:
     packages:
       - lib32stdc++6
-install:
-  - git clone https://github.com/flutter/flutter.git -b stable
+before_script:
+  - git clone https://github.com/flutter/flutter.git -b alpha --depth 1
   - ./flutter/bin/flutter doctor
   - gem install coveralls-lcov
 script:
