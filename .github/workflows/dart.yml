@@ -20,5 +20,10 @@ jobs:
       with:
         flutter-version: '1.22.0'
     - run: flutter pub get
-    - run: flutter test
+    - run: flutter test --coverage
     - run: flutter build apk
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        file: coverage/lcov.info
