@@ -133,7 +133,7 @@ class _LoginViewState extends State<LoginView> {
                                         alignment: Alignment.centerRight,
                                         child: FlatButton(
                                           padding: EdgeInsets.zero,
-                                          onPressed: () {},
+                                          onPressed: _loginBloc.recoverPassword,
                                           child: Text(
                                             "Esqueceu sua senha?",
                                             textAlign: TextAlign.right,

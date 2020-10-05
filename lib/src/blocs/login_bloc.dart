@@ -55,7 +55,11 @@ class LoginBloc extends BlocBase with UserInputValidator {
     });
   }
 
-  void logout() {}
+  void recoverPassword() {
+    String _email = _emailController.value;
+
+    firebaseDB.firebaseAuth.sendPasswordResetEmail(email: _email);
+  }
 
   @override
   void dispose() {
