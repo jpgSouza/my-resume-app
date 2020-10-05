@@ -1,6 +1,7 @@
 import 'package:my_resume_app/src/database/firebase.dart';
 import 'package:my_resume_app/src/model/entities/user_model.dart';
 import 'package:bloc_pattern/bloc_pattern.dart';
+import 'package:my_resume_app/src/model/validators/user_input_validator.dart';
 import 'package:rxdart/rxdart.dart';
 
 enum CreateState { IDLE, LOADING, SUCCESS, FAIL }
@@ -18,16 +19,20 @@ class UserBloc extends BlocBase with UserInputValidator {
   final _stateController = BehaviorSubject<CreateState>();
 
   //Streams
-  Stream<String> get outName => _nameController.stream;
-  Stream<String> get outEmail => _emailController.stream;
-  Stream<String> get outPassword => _passwordController.stream;
-  Stream<String> get outConfirmPassword => _passwordController.stream;
+  Stream<String> get outName => _nameController.stream.transform(validateName);
+  Stream<String> get outEmail =>
+      _emailController.stream.transform(validateEmail);
+  Stream<String> get outPassword =>
+      _passwordController.stream.transform(validatePassword);
+  Stream<String> get outConfirmPassword =>
+      _confirmPasswordController.stream.transform(validateConfirmPassword);
   Stream<CreateState> get outState => _stateController.stream;
 
   Function(String) get changeName => _nameController.sink.add;
   Function(String) get changeEmail => _emailController.sink.add;
   Function(String) get changePassword => _passwordController.sink.add;
-  Function(String) get changeConfirmPassword => _passwordController.sink.add;
+  Function(String) get changeConfirmPassword =>
+      _confirmPasswordController.sink.add;
 
   UserBloc() {
     user = new User.def();
@@ -73,5 +78,3 @@ class UserBloc extends BlocBase with UserInputValidator {
     });
   }
 }
-
-class UserInputValidator {}

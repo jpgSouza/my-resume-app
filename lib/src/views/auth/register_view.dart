@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_resume_app/constants.dart';
-import 'package:my_resume_app/src/model/bloc/user_bloc.dart';
+import 'package:my_resume_app/src/blocs/user_bloc.dart';
 import 'package:my_resume_app/src/views/auth/login_view.dart';
 import 'package:my_resume_app/src/views/widgets/buttons/custom_rounded_button.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_box.dart';
