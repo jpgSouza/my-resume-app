@@ -90,7 +90,7 @@ class _LoginViewState extends State<LoginView> {
                               right: 0.0,
                               bottom: 255.0,
                               child: CustomBox(
-                                  188.0,
+                                  null,
                                   Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
