@@ -63,8 +63,6 @@ class UserBloc extends BlocBase with UserInputValidator {
     _createWithEmailAndPassword(email, password, userData, 'users');
   }
 
-  void login() {}
-
   void _createWithEmailAndPassword(String email, String password,
       Map<String, dynamic> data, String collection) async {
     firebaseDB.firebaseAuth

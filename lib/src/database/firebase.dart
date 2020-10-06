@@ -9,10 +9,16 @@ class FirebaseDB {
   FirebaseDB() {
     firestore = Firestore.instance;
     firebaseAuth = FirebaseAuth.instance;
+    _loadCurrentUser();
   }
 
   Future<Null> saveOnCloudFirestore(
       Map<String, dynamic> data, String collection) async {
     firestore.collection(collection).document(firebaseUser.uid).setData(data);
+  }
+
+  void _loadCurrentUser() async {
+    if (firebaseUser == null) firebaseUser = await firebaseAuth.currentUser();
+    print(firebaseUser.uid);
   }
 }
