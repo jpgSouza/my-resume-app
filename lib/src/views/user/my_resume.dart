@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
 import 'package:my_resume_app/src/views/widgets/buttons/custom_rounded_button.dart';
@@ -10,6 +11,10 @@ import 'package:my_resume_app/src/views/widgets/form/custom_text_form_field.dart
 import 'package:my_resume_app/src/views/widgets/navigator/custom_bottom_navigator.dart';
 
 class MyResume extends StatelessWidget {
+  final DocumentSnapshot resume;
+
+  MyResume(this.resume);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,13 +94,13 @@ class MyResume extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 ResumeField(
-                                    "João Pedro Giacometti de Souza",
+                                    "${resume.data['fullName']}",
                                     TextStyle(
                                         color: buttonColor, fontSize: 13.0),
                                     false,
                                     null),
                                 ResumeField(
-                                    "joaopedro@gmail.com",
+                                    "${resume.data['email']}",
                                     TextStyle(
                                         color: buttonColor, fontSize: 13.0),
                                     false,
@@ -105,7 +110,7 @@ class MyResume extends StatelessWidget {
                                       size: 16.0,
                                     )),
                                 ResumeField(
-                                    "(35)99976-0853",
+                                    "${resume.data['phone']}",
                                     TextStyle(
                                         color: buttonColor, fontSize: 13.0),
                                     false,
@@ -124,7 +129,7 @@ class MyResume extends StatelessWidget {
                       Column(
                         children: [
                           ResumeField(
-                              "Java",
+                              "${resume.data['skill']['title']}",
                               TextStyle(color: buttonColor, fontSize: 18.0),
                               false,
                               Icon(
@@ -135,7 +140,7 @@ class MyResume extends StatelessWidget {
                           CustomTextArea(
                               null,
                               buttonColor,
-                              "Experiência com Framework Spring Boot e criação de aplicações Backend com API REST.",
+                              "${resume.data['skill']['description']}",
                               Colors.white,
                               null,
                               null)
@@ -148,7 +153,7 @@ class MyResume extends StatelessWidget {
                       Column(
                         children: [
                           ResumeField(
-                              "Java completo 2020",
+                              "${resume.data['course']['title']}",
                               TextStyle(color: buttonColor, fontSize: 18.0),
                               false,
                               Icon(
@@ -157,7 +162,7 @@ class MyResume extends StatelessWidget {
                                 size: 16.0,
                               )),
                           ResumeField(
-                              "10/06/2020",
+                              "${resume.data['course']['date']}",
                               TextStyle(color: buttonColor, fontSize: 18.0),
                               false,
                               Icon(
@@ -166,7 +171,7 @@ class MyResume extends StatelessWidget {
                                 size: 16.0,
                               )),
                           ResumeField(
-                              "Udemy",
+                              "${resume.data['course']['institute']}",
                               TextStyle(color: buttonColor, fontSize: 18.0),
                               false,
                               Icon(

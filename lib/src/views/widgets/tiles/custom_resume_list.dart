@@ -85,7 +85,8 @@ class ResumeTile extends StatelessWidget {
                                   onTap: () {
                                     Navigator.of(context).pushReplacement(
                                         MaterialPageRoute(
-                                            builder: (context) => MyResume()));
+                                            builder: (context) =>
+                                                MyResume(resume)));
                                   },
                                   child: Icon(
                                     Icons.remove_red_eye,
