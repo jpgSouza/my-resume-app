@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
 import 'package:my_resume_app/src/blocs/resume_bloc.dart';
 import 'package:my_resume_app/src/views/user/home_view.dart';
+import 'package:my_resume_app/src/views/user/logout_view.dart';
 import 'package:my_resume_app/src/views/user/new_resume_view.dart';
 
 class BottomNavigator extends StatefulWidget {
@@ -18,6 +19,7 @@ class _BottomNavigator extends State<BottomNavigator> {
   int _startPage = 1;
   final HomeView _homeView = new HomeView();
   final NewResume _newResume = new NewResume();
+  final LogoutView _logoutView = new LogoutView();
   Widget _views = new HomeView();
 
   @override
@@ -35,6 +37,7 @@ class _BottomNavigator extends State<BottomNavigator> {
         return _homeView;
         break;
       case 2:
+        return _logoutView;
         break;
     }
   }
