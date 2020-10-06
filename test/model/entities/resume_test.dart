@@ -2,7 +2,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:my_resume_app/src/model/entities/course_model.dart';
 import 'package:my_resume_app/src/model/entities/resume_model.dart';
 import 'package:my_resume_app/src/model/entities/skill_model.dart';
-import 'package:my_resume_app/src/model/entities/user_model.dart';
 
 void main() {
   Resume resume = new Resume(

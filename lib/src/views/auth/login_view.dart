@@ -254,6 +254,8 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                 );
+              default:
+                return CircularProgressIndicator();
             }
           }),
     );

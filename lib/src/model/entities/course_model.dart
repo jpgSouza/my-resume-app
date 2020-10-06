@@ -5,8 +5,6 @@ class Course {
 
   Course(this.title, this.date, this.institute);
 
-  Course.def();
-
   Map<String, dynamic> toMap() {
     return {'title': title, 'date': date, 'institute': institute};
   }

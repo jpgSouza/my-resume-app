@@ -14,6 +14,8 @@ class Resume {
   Resume(this.title, this.fullName, this.phone, this.email, this.skill,
       this.course);
 
+  Resume.def();
+
   Map<String, dynamic> toMap() {
     return {
       'title': title,

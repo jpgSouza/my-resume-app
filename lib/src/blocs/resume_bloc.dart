@@ -1,10 +1,16 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:my_resume_app/src/database/firebase.dart';
+import 'package:my_resume_app/src/model/entities/course_model.dart';
+import 'package:my_resume_app/src/model/entities/resume_model.dart';
+import 'package:my_resume_app/src/model/entities/skill_model.dart';
 import 'package:rxdart/rxdart.dart';
+
+enum ResumeState { IDLE, LOADING, SUCCESS, FAIL }
 
 class ResumeBloc extends BlocBase {
   FirebaseDB firebaseDB;
+  Resume resume;
   Map<String, dynamic> resumeData = Map();
 
   //Constrollers
@@ -18,6 +24,7 @@ class ResumeBloc extends BlocBase {
   final _courseDateController = BehaviorSubject<String>();
   final _courseInstituteController = BehaviorSubject<String>();
   final _resumeController = BehaviorSubject<List>();
+  final _stateController = BehaviorSubject<ResumeState>();
 
   //Streams
   Stream<String> get outTitle => _titleController.stream;
@@ -30,6 +37,7 @@ class ResumeBloc extends BlocBase {
   Stream<String> get outCourseDate => _courseDateController.stream;
   Stream<String> get outCourseInstitute => _courseInstituteController.stream;
   Stream<List> get outResumes => _resumeController.stream;
+  Stream<ResumeState> get outState => _stateController.stream;
 
   Function(String) get changeTitle => _titleController.sink.add;
   Function(String) get changeFullName => _fullNameController.sink.add;
@@ -51,6 +59,8 @@ class ResumeBloc extends BlocBase {
     Future.delayed(Duration(milliseconds: 500), () {
       _addResumeListener();
     });
+    _stateController.add(ResumeState.IDLE);
+    resume = Resume.def();
   }
 
   @override
@@ -92,5 +102,46 @@ class ResumeBloc extends BlocBase {
 
       _resumeController.add(_resumes);
     });
+  }
+
+  void createResume() async {
+    String title = _titleController.value;
+    String fullName = _fullNameController.value;
+    String phone = _phoneController.value;
+    String email = _emailController.value;
+    String skillTitle = _skillTitleController.value;
+    String skillDescription = _skillDescriptionController.value;
+    String courseTitle = _courseTitleController.value;
+    String courseDate = _courseDateController.value;
+    String courseInstitute = _courseInstituteController.value;
+
+    resume = new Resume(
+        title,
+        fullName,
+        phone,
+        email,
+        new Skill(skillTitle, skillDescription),
+        new Course(courseTitle, courseDate, courseInstitute));
+
+    resumeData = resume.toMap();
+
+    _stateController.add(ResumeState.LOADING);
+
+    await saveResumeOnCloud(title, resumeData);
+  }
+
+  Future<Null> saveResumeOnCloud(
+      String title, Map<String, dynamic> resumeData) {
+    firebaseDB.firestore
+        .collection('users')
+        .document(firebaseDB.firebaseUser.uid)
+        .collection('resumes')
+        .document(title)
+        .setData(resumeData)
+        .catchError((err) {
+      _stateController.add(ResumeState.FAIL);
+    });
+
+    _stateController.add(ResumeState.SUCCESS);
   }
 }
