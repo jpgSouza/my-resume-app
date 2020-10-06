@@ -150,4 +150,13 @@ class ResumeBloc extends BlocBase with ResumeInputValidator {
 
     _stateController.add(ResumeState.SUCCESS);
   }
+
+  void removeResume(DocumentSnapshot resume) {
+    firebaseDB.firestore
+        .collection('users')
+        .document(firebaseDB.firebaseUser.uid)
+        .collection('resumes')
+        .document(resume.documentID)
+        .delete();
+  }
 }
