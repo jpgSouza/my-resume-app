@@ -1,5 +1,7 @@
+import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
+import 'package:my_resume_app/src/blocs/resume_bloc.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_input_fields.dart';
 import 'package:my_resume_app/src/views/widgets/tiles/custom_resume_list.dart';
 
@@ -11,6 +13,7 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
+    final _resumeBloc = BlocProvider.of<ResumeBloc>(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
@@ -47,7 +50,23 @@ class _HomeViewState extends State<HomeView> {
             SizedBox(
               height: 30.0,
             ),
-            ResumeTile(),
+            StreamBuilder<List>(
+                stream: _resumeBloc.outResumes,
+                builder: (context, snapshot) {
+                  if (!snapshot.hasData) {
+                    return CircularProgressIndicator();
+                  } else if (snapshot.data.length == 0) {
+                    return Center(
+                      child: Text('Nehum curriculo cadastrado'),
+                    );
+                  }
+                  return ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: snapshot.data.length,
+                      itemBuilder: (context, index) {
+                        return ResumeTile(snapshot.data[index]);
+                      });
+                })
           ],
         ),
       ),

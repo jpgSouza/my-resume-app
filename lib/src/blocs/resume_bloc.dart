@@ -27,7 +27,6 @@ class ResumeBloc extends BlocBase {
   }
 
   void _addResumeListener() {
-    print(firebaseDB.firebaseUser.uid);
     firebaseDB.firestore
         .collection('users')
         .document(firebaseDB.firebaseUser.uid)
