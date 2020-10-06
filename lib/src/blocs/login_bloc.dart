@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc_pattern/bloc_pattern.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:my_resume_app/src/database/firebase.dart';
 import 'package:my_resume_app/src/model/entities/user_model.dart';
 import 'package:my_resume_app/src/model/validators/user_input_validator.dart';
@@ -36,6 +37,7 @@ class LoginBloc extends BlocBase with UserInputValidator {
         firebaseDB.firebaseAuth.onAuthStateChanged.listen((userAuth) {
       if (userAuth != null) {
         _stateController.add(LoginState.SUCCESS);
+        //firebaseDB.firebaseAuth.signOut();
       } else {
         _stateController.add(LoginState.IDLE);
       }

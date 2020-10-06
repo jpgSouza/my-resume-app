@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:my_resume_app/src/model/entities/user_model.dart';
 
 class FirebaseDB {
   Firestore firestore;
@@ -9,7 +10,6 @@ class FirebaseDB {
   FirebaseDB() {
     firestore = Firestore.instance;
     firebaseAuth = FirebaseAuth.instance;
-    _loadCurrentUser();
   }
 
   Future<Null> saveOnCloudFirestore(
@@ -17,8 +17,7 @@ class FirebaseDB {
     firestore.collection(collection).document(firebaseUser.uid).setData(data);
   }
 
-  void _loadCurrentUser() async {
+  void loadCurrentUser() async {
     if (firebaseUser == null) firebaseUser = await firebaseAuth.currentUser();
-    print(firebaseUser.uid);
   }
 }

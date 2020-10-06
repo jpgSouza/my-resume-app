@@ -1,10 +1,12 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:my_resume_app/src/database/firebase.dart';
+import 'package:my_resume_app/src/model/entities/user_model.dart';
 import 'package:rxdart/rxdart.dart';
 
 class ResumeBloc extends BlocBase {
   FirebaseDB firebaseDB;
+  User user;
   final _resumeController = BehaviorSubject<List>();
 
   Stream<List> get outResumes => _resumeController.stream;
@@ -13,7 +15,10 @@ class ResumeBloc extends BlocBase {
 
   ResumeBloc() {
     firebaseDB = FirebaseDB();
-    _addResumeListener();
+    firebaseDB.loadCurrentUser();
+    Future.delayed(Duration(milliseconds: 500), () {
+      _addResumeListener();
+    });
   }
 
   @override
@@ -21,8 +26,9 @@ class ResumeBloc extends BlocBase {
     _resumeController.close();
   }
 
-  void _addResumeListener() async {
-    await firebaseDB.firestore
+  void _addResumeListener() {
+    print(firebaseDB.firebaseUser.uid);
+    firebaseDB.firestore
         .collection('users')
         .document(firebaseDB.firebaseUser.uid)
         .collection('resumes')
