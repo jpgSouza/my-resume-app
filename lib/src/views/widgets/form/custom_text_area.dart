@@ -28,6 +28,7 @@ class CustomTextArea extends StatelessWidget {
                 style: TextStyle(color: this.textColor),
                 initialValue: this.initialValue,
                 maxLines: 3,
+                maxLength: 80,
                 decoration: InputDecoration.collapsed(
                     hintText: this.hint, fillColor: Colors.grey[500]),
               ),

@@ -4,11 +4,12 @@ import 'package:my_resume_app/src/database/firebase.dart';
 import 'package:my_resume_app/src/model/entities/course_model.dart';
 import 'package:my_resume_app/src/model/entities/resume_model.dart';
 import 'package:my_resume_app/src/model/entities/skill_model.dart';
+import 'package:my_resume_app/src/model/validators/resume_input_validator.dart';
 import 'package:rxdart/rxdart.dart';
 
 enum ResumeState { IDLE, LOADING, SUCCESS, FAIL }
 
-class ResumeBloc extends BlocBase {
+class ResumeBloc extends BlocBase with ResumeInputValidator {
   FirebaseDB firebaseDB;
   Resume resume;
   Map<String, dynamic> resumeData = Map();
@@ -29,12 +30,17 @@ class ResumeBloc extends BlocBase {
   //Streams
   Stream<String> get outTitle => _titleController.stream;
   Stream<String> get outFullName => _fullNameController.stream;
-  Stream<String> get outPhone => _phoneController.stream;
-  Stream<String> get outEmail => _emailController.stream;
-  Stream<String> get outSkillTitle => _skillTitleController.stream;
+  Stream<String> get outPhone =>
+      _phoneController.stream.transform(validatePhone);
+  Stream<String> get outEmail =>
+      _emailController.stream.transform(validateEmail);
+  Stream<String> get outSkillTitle =>
+      _skillTitleController.stream.transform(validateTitle);
   Stream<String> get outSkillDescription => _skillDescriptionController.stream;
-  Stream<String> get outCourseTitle => _courseTitleController.stream;
-  Stream<String> get outCourseDate => _courseDateController.stream;
+  Stream<String> get outCourseTitle =>
+      _courseTitleController.stream.transform(validadeCourseTitle);
+  Stream<String> get outCourseDate =>
+      _courseDateController.stream.transform(validadeCourseDate);
   Stream<String> get outCourseInstitute => _courseInstituteController.stream;
   Stream<List> get outResumes => _resumeController.stream;
   Stream<ResumeState> get outState => _stateController.stream;

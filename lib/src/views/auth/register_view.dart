@@ -102,60 +102,60 @@ class _RegisterViewState extends State<RegisterView> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         InputFields(
-                                          Icon(
-                                            Icons.person,
-                                            color: Colors.white,
-                                          ),
-                                          null,
-                                          "Nome",
-                                          TextInputType.text,
-                                          false,
-                                          Colors.white,
-                                          _userBloc.outName,
-                                          _userBloc.changeName,
-                                        ),
-                                        Container(
-                                            padding: EdgeInsets.all(2.0),
-                                            decoration: BoxDecoration(
-                                                border: Border(
-                                                    bottom: BorderSide(
-                                                        color: Colors.white)))),
-                                        InputFields(
-                                          Icon(
-                                            Icons.email,
-                                            color: Colors.white,
-                                          ),
-                                          null,
-                                          "E-mail",
-                                          TextInputType.emailAddress,
-                                          false,
-                                          Colors.white,
-                                          _userBloc.outEmail,
-                                          _userBloc.changeEmail,
-                                        ),
-                                        Container(
-                                            padding: EdgeInsets.all(2.0),
-                                            decoration: BoxDecoration(
-                                                border: Border(
-                                                    bottom: BorderSide(
-                                                        color: Colors.white)))),
-                                        InputFields(
-                                          Icon(Icons.vpn_key,
-                                              color: Colors.white),
-                                          IconButton(
-                                            onPressed: () {},
-                                            icon: Icon(
-                                              Icons.remove_red_eye,
+                                            Icon(
+                                              Icons.person,
                                               color: Colors.white,
                                             ),
-                                          ),
-                                          "Senha",
-                                          TextInputType.text,
-                                          true,
-                                          Colors.white,
-                                          _userBloc.outPassword,
-                                          _userBloc.changePassword,
-                                        ),
+                                            null,
+                                            "Nome",
+                                            TextInputType.text,
+                                            false,
+                                            Colors.white,
+                                            _userBloc.outName,
+                                            _userBloc.changeName,
+                                            null),
+                                        Container(
+                                            padding: EdgeInsets.all(2.0),
+                                            decoration: BoxDecoration(
+                                                border: Border(
+                                                    bottom: BorderSide(
+                                                        color: Colors.white)))),
+                                        InputFields(
+                                            Icon(
+                                              Icons.email,
+                                              color: Colors.white,
+                                            ),
+                                            null,
+                                            "E-mail",
+                                            TextInputType.emailAddress,
+                                            false,
+                                            Colors.white,
+                                            _userBloc.outEmail,
+                                            _userBloc.changeEmail,
+                                            null),
+                                        Container(
+                                            padding: EdgeInsets.all(2.0),
+                                            decoration: BoxDecoration(
+                                                border: Border(
+                                                    bottom: BorderSide(
+                                                        color: Colors.white)))),
+                                        InputFields(
+                                            Icon(Icons.vpn_key,
+                                                color: Colors.white),
+                                            IconButton(
+                                              onPressed: () {},
+                                              icon: Icon(
+                                                Icons.remove_red_eye,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                            "Senha",
+                                            TextInputType.text,
+                                            true,
+                                            Colors.white,
+                                            _userBloc.outPassword,
+                                            _userBloc.changePassword,
+                                            null),
                                         Container(
                                             padding: EdgeInsets.all(2.0),
                                             decoration: BoxDecoration(
@@ -177,7 +177,8 @@ class _RegisterViewState extends State<RegisterView> {
                                             true,
                                             Colors.white,
                                             _userBloc.outConfirmPassword,
-                                            _userBloc.changeConfirmPassword),
+                                            _userBloc.changeConfirmPassword,
+                                            null),
                                       ],
                                     ),
                                     0.0,

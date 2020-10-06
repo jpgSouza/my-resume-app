@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
+import 'package:my_resume_app/masks.dart';
 import 'package:my_resume_app/src/blocs/resume_bloc.dart';
 import 'package:my_resume_app/src/model/entities/resume_model.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_box.dart';
@@ -98,7 +99,8 @@ class _NewResumeState extends State<NewResume> {
                                         false,
                                         Colors.white,
                                         _resumeBloc.outTitle,
-                                        _resumeBloc.changeTitle),
+                                        _resumeBloc.changeTitle,
+                                        null),
                                     Container(
                                         decoration: BoxDecoration(
                                             border: Border(
@@ -110,7 +112,7 @@ class _NewResumeState extends State<NewResume> {
                         ),
                       ),
                       CustomBox(
-                          580.0,
+                          null,
                           Column(
                             children: [
                               Text("Perfil",
@@ -128,7 +130,8 @@ class _NewResumeState extends State<NewResume> {
                                   false,
                                   Colors.white,
                                   _resumeBloc.outFullName,
-                                  _resumeBloc.changeFullName),
+                                  _resumeBloc.changeFullName,
+                                  null),
                               Container(
                                   decoration: BoxDecoration(
                                       border: Border(
@@ -146,7 +149,8 @@ class _NewResumeState extends State<NewResume> {
                                   false,
                                   Colors.white,
                                   _resumeBloc.outPhone,
-                                  _resumeBloc.changePhone),
+                                  _resumeBloc.changePhone,
+                                  MaskFormat.phoneMask()),
                               Container(
                                   decoration: BoxDecoration(
                                       border: Border(
@@ -163,7 +167,8 @@ class _NewResumeState extends State<NewResume> {
                                   false,
                                   Colors.white,
                                   _resumeBloc.outEmail,
-                                  _resumeBloc.changeEmail),
+                                  _resumeBloc.changeEmail,
+                                  null),
                               Container(
                                   margin: EdgeInsets.only(bottom: 10.0),
                                   decoration: BoxDecoration(
@@ -185,7 +190,8 @@ class _NewResumeState extends State<NewResume> {
                                   false,
                                   Colors.white,
                                   _resumeBloc.outSkillTitle,
-                                  _resumeBloc.changeSkillTitle),
+                                  _resumeBloc.changeSkillTitle,
+                                  null),
                               Container(
                                   margin: EdgeInsets.only(bottom: 10.0),
                                   decoration: BoxDecoration(
@@ -219,7 +225,8 @@ class _NewResumeState extends State<NewResume> {
                                   false,
                                   Colors.white,
                                   _resumeBloc.outCourseTitle,
-                                  _resumeBloc.changeCourseTitle),
+                                  _resumeBloc.changeCourseTitle,
+                                  null),
                               Container(
                                   margin: EdgeInsets.only(bottom: 10.0),
                                   decoration: BoxDecoration(
@@ -237,7 +244,8 @@ class _NewResumeState extends State<NewResume> {
                                   false,
                                   Colors.white,
                                   _resumeBloc.outCourseDate,
-                                  _resumeBloc.changeCourseDate),
+                                  _resumeBloc.changeCourseDate,
+                                  MaskFormat.dateMask()),
                               Container(
                                   margin: EdgeInsets.only(bottom: 10.0),
                                   decoration: BoxDecoration(
@@ -255,13 +263,8 @@ class _NewResumeState extends State<NewResume> {
                                   false,
                                   Colors.white,
                                   _resumeBloc.outCourseInstitute,
-                                  _resumeBloc.changeCourseInstitute),
-                              Container(
-                                  margin: EdgeInsets.only(bottom: 10.0),
-                                  decoration: BoxDecoration(
-                                      border: Border(
-                                          bottom: BorderSide(
-                                              color: Colors.white)))),
+                                  _resumeBloc.changeCourseInstitute,
+                                  null),
                             ],
                           ),
                           25.0,

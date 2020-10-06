@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:my_resume_app/src/model/entities/user_model.dart';
 
 class FirebaseDB {
   Firestore firestore;

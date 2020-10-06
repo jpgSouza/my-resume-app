@@ -106,7 +106,8 @@ class _LoginViewState extends State<LoginView> {
                                           false,
                                           Colors.white,
                                           _loginBloc.outEmail,
-                                          _loginBloc.changeEmail),
+                                          _loginBloc.changeEmail,
+                                          null),
                                       Container(
                                           padding: EdgeInsets.all(2.0),
                                           decoration: BoxDecoration(
@@ -128,7 +129,8 @@ class _LoginViewState extends State<LoginView> {
                                           true,
                                           Colors.white,
                                           _loginBloc.outPassword,
-                                          _loginBloc.changePassword),
+                                          _loginBloc.changePassword,
+                                          null),
                                       Align(
                                         alignment: Alignment.centerRight,
                                         child: FlatButton(

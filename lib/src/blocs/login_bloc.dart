@@ -37,7 +37,6 @@ class LoginBloc extends BlocBase with UserInputValidator {
         firebaseDB.firebaseAuth.onAuthStateChanged.listen((userAuth) {
       if (userAuth != null) {
         _stateController.add(LoginState.SUCCESS);
-        //firebaseDB.firebaseAuth.signOut();
       } else {
         _stateController.add(LoginState.IDLE);
       }
