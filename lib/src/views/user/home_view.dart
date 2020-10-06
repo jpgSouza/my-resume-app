@@ -2,6 +2,7 @@ import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
 import 'package:my_resume_app/src/blocs/resume_bloc.dart';
+import 'package:my_resume_app/src/views/widgets/custom_notifier.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_input_fields.dart';
 import 'package:my_resume_app/src/views/widgets/tiles/custom_resume_list.dart';
 
@@ -56,9 +57,7 @@ class _HomeViewState extends State<HomeView> {
                   if (!snapshot.hasData) {
                     return CircularProgressIndicator();
                   } else if (snapshot.data.length == 0) {
-                    return Center(
-                      child: Text('Nehum curriculo cadastrado'),
-                    );
+                    return CustomNotifier();
                   }
                   return ListView.builder(
                       shrinkWrap: true,
