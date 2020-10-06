@@ -25,7 +25,7 @@ class InputFields extends StatelessWidget {
             style: TextStyle(color: this.color),
             obscureText: this.obscure,
             keyboardType: this.textInputType,
-            inputFormatters: [this.mask],
+            inputFormatters: this.mask == null ? null : [this.mask],
             decoration: InputDecoration(
                 border: InputBorder.none,
                 prefixIcon: this.prefixIcon,

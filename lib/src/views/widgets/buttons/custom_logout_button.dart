@@ -1,9 +1,13 @@
+import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
+import 'package:my_resume_app/src/blocs/login_bloc.dart';
+import 'package:my_resume_app/src/views/auth/login_view.dart';
 
 class LogoutButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final _loginBloc = BlocProvider.of<LoginBloc>(context);
     return Container(
       height: 55.0,
       alignment: Alignment.center,
@@ -24,7 +28,11 @@ class LogoutButton extends StatelessWidget {
             ),
             borderSide: BorderSide(color: buttonColor, width: 2),
             shape: StadiumBorder(),
-            onPressed: () {}),
+            onPressed: () {
+              _loginBloc.logout();
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => LoginView()));
+            }),
       ),
     );
   }
