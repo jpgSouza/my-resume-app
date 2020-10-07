@@ -19,55 +19,57 @@ class _HomeViewState extends State<HomeView> {
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Column(
-          children: [
-            Container(
-                padding: EdgeInsets.only(left: 15.0, right: 5.0),
-                height: 36.0,
-                margin: EdgeInsets.only(left: 36.0, right: 36.0, top: 45.0),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.black26,
-                          blurRadius: 6.0,
-                          offset: Offset(4, 4))
-                    ]),
-                child: InputFields(
-                    null,
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.search),
-                      color: primaryColor,
-                      padding: EdgeInsets.zero,
-                    ),
-                    "Pesquisar...",
-                    TextInputType.text,
-                    false,
-                    Colors.grey[400],
-                    null,
-                    null,
-                    null)),
-            SizedBox(
-              height: 30.0,
-            ),
-            StreamBuilder<List>(
-                stream: _resumeBloc.outResumes,
-                builder: (context, snapshot) {
-                  if (!snapshot.hasData) {
-                    return CircularProgressIndicator();
-                  } else if (snapshot.data.length == 0) {
-                    return CustomNotifier();
-                  }
-                  return ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: snapshot.data.length,
-                      itemBuilder: (context, index) {
-                        return ResumeTile(snapshot.data[index]);
-                      });
-                })
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                  padding: EdgeInsets.only(left: 15.0, right: 5.0),
+                  height: 36.0,
+                  margin: EdgeInsets.only(left: 36.0, right: 36.0, top: 45.0),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20.0),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 6.0,
+                            offset: Offset(4, 4))
+                      ]),
+                  child: InputFields(
+                      null,
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.search),
+                        color: primaryColor,
+                        padding: EdgeInsets.zero,
+                      ),
+                      "Pesquisar...",
+                      TextInputType.text,
+                      false,
+                      Colors.grey[400],
+                      null,
+                      _resumeBloc.onChangedSearch,
+                      null)),
+              SizedBox(
+                height: 30.0,
+              ),
+              StreamBuilder<List>(
+                  stream: _resumeBloc.outResumes,
+                  builder: (context, snapshot) {
+                    if (!snapshot.hasData) {
+                      return CircularProgressIndicator();
+                    } else if (snapshot.data.length == 0) {
+                      return CustomNotifier();
+                    }
+                    return ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: snapshot.data.length,
+                        itemBuilder: (context, index) {
+                          return ResumeTile(snapshot.data[index]);
+                        });
+                  })
+            ],
+          ),
         ),
       ),
     );

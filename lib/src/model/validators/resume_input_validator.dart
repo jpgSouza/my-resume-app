@@ -30,7 +30,7 @@ class ResumeInputValidator {
 
   final validadeCourseTitle =
       StreamTransformer<String, String>.fromHandlers(handleData: (title, sink) {
-    if (title.length >= 4 && title.length <= 14) {
+    if (title.length >= 4 && title.length <= 20) {
       sink.add(title);
     } else {
       sink.addError("Min: 4 caracteres. Max: 14 caracteres");

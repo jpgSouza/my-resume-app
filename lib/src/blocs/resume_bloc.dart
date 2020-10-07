@@ -159,4 +159,23 @@ class ResumeBloc extends BlocBase with ResumeInputValidator {
         .document(resume.documentID)
         .delete();
   }
+
+  void onChangedSearch(String search) {
+    if (search.trim().isEmpty) {
+      _resumeController.add(_resumes);
+    } else {
+      _resumeController.add(_filter(search.trim()));
+    }
+  }
+
+  List<DocumentSnapshot> _filter(String search) {
+    List<DocumentSnapshot> filteredResumes = List.from(_resumes);
+    filteredResumes.retainWhere((document) {
+      return document.data['title']
+          .toString()
+          .toUpperCase()
+          .contains(search.toUpperCase());
+    });
+    return filteredResumes;
+  }
 }
