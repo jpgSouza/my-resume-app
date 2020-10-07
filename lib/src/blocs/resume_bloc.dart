@@ -151,6 +151,47 @@ class ResumeBloc extends BlocBase with ResumeInputValidator {
     _stateController.add(ResumeState.SUCCESS);
   }
 
+  void editData(DocumentSnapshot resumeSnapshot) async {
+    String fullName = _fullNameController.value == null
+        ? resumeSnapshot.data['fullName']
+        : _fullNameController.value;
+    String phone = _phoneController.value == null
+        ? resumeSnapshot.data['phone']
+        : _phoneController.value;
+    String email = _emailController.value == null
+        ? resumeSnapshot.data['email']
+        : _emailController.value;
+    String skillTitle = _skillTitleController.value == null
+        ? resumeSnapshot.data['skill']['title']
+        : _skillTitleController.value;
+    String skillDescription = _skillDescriptionController.value == null
+        ? resumeSnapshot.data['skill']['description']
+        : _skillDescriptionController.value;
+    String courseTitle = _courseTitleController.value == null
+        ? resumeSnapshot.data['course']['title']
+        : _courseTitleController.value;
+    String courseDate = _courseDateController.value == null
+        ? resumeSnapshot.data['course']['date']
+        : _courseDateController.value;
+    String courseInstitute = _courseInstituteController.value == null
+        ? resumeSnapshot.data['course']['institute']
+        : _courseInstituteController.value;
+
+    resume = new Resume(
+        resumeSnapshot.documentID,
+        fullName,
+        phone,
+        email,
+        new Skill(skillTitle, skillDescription),
+        new Course(courseTitle, courseDate, courseInstitute));
+
+    resumeData = resume.toMap();
+
+    _stateController.add(ResumeState.LOADING);
+
+    await saveResumeOnCloud(resumeSnapshot.documentID, resumeData);
+  }
+
   void removeResume(DocumentSnapshot resume) {
     firebaseDB.firestore
         .collection('users')

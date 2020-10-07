@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
 import 'package:my_resume_app/masks.dart';
 import 'package:my_resume_app/src/blocs/resume_bloc.dart';
-import 'package:my_resume_app/src/model/entities/resume_model.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_box.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_input_fields.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_text_area.dart';
+import 'package:my_resume_app/src/views/widgets/image_source_sheet.dart';
 import 'package:my_resume_app/src/views/widgets/navigator/custom_bottom_navigator.dart';
 
 class NewResume extends StatefulWidget {
@@ -202,6 +202,7 @@ class _NewResumeState extends State<NewResume> {
                                   "Resumo",
                                   Colors.white,
                                   null,
+                                  true,
                                   Colors.black,
                                   _resumeBloc.outSkillDescription,
                                   _resumeBloc.changeSkillDescription),

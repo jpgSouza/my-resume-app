@@ -5,11 +5,12 @@ class CustomTextArea extends StatelessWidget {
   final Color color;
   final Color textColor;
   final String initialValue;
+  final bool enable;
   final Stream<String> stream;
   final Function(String) onChanged;
 
-  CustomTextArea(this.hint, this.color, this.initialValue, this.textColor,
-      this.stream, this.onChanged);
+  CustomTextArea(this.hint, this.color, this.initialValue, this.enable,
+      this.textColor, this.stream, this.onChanged);
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +25,7 @@ class CustomTextArea extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.all(8.0),
               child: TextFormField(
+                enabled: this.enable,
                 onChanged: this.onChanged,
                 style: TextStyle(color: this.textColor),
                 initialValue: this.initialValue,

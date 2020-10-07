@@ -21,7 +21,7 @@ class InputFields extends StatelessWidget {
         stream: this.stream,
         builder: (context, snapshot) {
           return TextFormField(
-            onChanged: onChanged,
+            onChanged: this.onChanged,
             style: TextStyle(color: this.color),
             obscureText: this.obscure,
             keyboardType: this.textInputType,
