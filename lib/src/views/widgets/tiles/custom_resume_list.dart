@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
 import 'package:my_resume_app/src/blocs/resume_bloc.dart';
+import 'package:my_resume_app/src/model/services/pdf_service.dart';
 import 'package:my_resume_app/src/views/user/my_resume.dart';
 import 'package:my_resume_app/src/views/widgets/custom_dialog.dart';
 
@@ -14,6 +15,7 @@ class ResumeTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _resumeBloc = BlocProvider.of<ResumeBloc>(context);
+    final PdfService _pdfService = PdfService();
     return Container(
       child: Card(
         margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
@@ -53,10 +55,14 @@ class ResumeTile extends StatelessWidget {
                           Text(
                             "${resume.documentID}",
                           ),
-                          Icon(
-                            Icons.share,
-                            color: primaryColor,
-                            size: 28.0,
+                          GestureDetector(
+                            onTap: () {
+                              _pdfService.share(context, resume);
+                            },
+                            child: Icon(
+                              Icons.share,
+                              color: primaryColor,
+                            ),
                           )
                         ],
                       ),

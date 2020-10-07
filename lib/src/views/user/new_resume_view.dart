@@ -260,7 +260,7 @@ class _NewResumeState extends State<NewResume> {
                                   ),
                                   null,
                                   "Instituição",
-                                  TextInputType.datetime,
+                                  TextInputType.text,
                                   false,
                                   Colors.white,
                                   _resumeBloc.outCourseInstitute,
