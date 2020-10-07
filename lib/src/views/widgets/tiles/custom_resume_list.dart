@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
 import 'package:my_resume_app/src/blocs/resume_bloc.dart';
 import 'package:my_resume_app/src/views/user/my_resume.dart';
+import 'package:my_resume_app/src/views/widgets/custom_dialog.dart';
 
 class ResumeTile extends StatelessWidget {
   final DocumentSnapshot resume;
@@ -107,7 +108,10 @@ class ResumeTile extends StatelessWidget {
                                         bottomRight: Radius.circular(6.0))),
                                 child: GestureDetector(
                                   onTap: () {
-                                    _resumeBloc.removeResume(resume);
+                                    showDialog(
+                                        context: context,
+                                        builder: (BuildContext) => CustomDialog(
+                                            resume, _resumeBloc.removeResume));
                                   },
                                   child: Icon(
                                     Icons.delete,
