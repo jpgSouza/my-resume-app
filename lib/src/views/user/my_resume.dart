@@ -26,6 +26,29 @@ class _MyResumeState extends State<MyResume> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
+  void initState() {
+    super.initState();
+    _resumeBloc.outState.listen((state) {
+      switch (state) {
+        case ResumeState.SUCCESS:
+          _scaffoldKey.currentState.showSnackBar(SnackBar(
+              content: Text(
+                "Editado com sucesso",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              elevation: 6.0,
+              backgroundColor: Colors.green,
+              duration: Duration(seconds: 2)));
+          break;
+        case ResumeState.FAIL:
+        case ResumeState.LOADING:
+        case ResumeState.IDLE:
+      }
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
@@ -36,7 +59,6 @@ class _MyResumeState extends State<MyResume> {
           builder: (context, snapshot) {
             switch (snapshot.data) {
               case ResumeState.LOADING:
-                return Center(child: CircularProgressIndicator());
               case ResumeState.SUCCESS:
               case ResumeState.FAIL:
               case ResumeState.IDLE:
