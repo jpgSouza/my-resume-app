@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
+import 'package:my_resume_app/src/model/services/pdf_service.dart';
 import 'package:my_resume_app/src/views/auth/login_view.dart';
 
 void main() => runApp(MyApp());
