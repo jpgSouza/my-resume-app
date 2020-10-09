@@ -33,6 +33,11 @@ As seguintes bibliotecas foram usadas na construção do projeto:
 - [Test](https://pub.dev/packages/test)
 - [Cloud Firestore](https://pub.dev/packages/cloud_firestore)
 - [Firebase Auth](https://pub.dev/packages/firebase_auth)
+- [Firebase Storage](https://pub.dev/packages/firebase_storage)
+- [PDF](https://pub.dev/packages/pdf)
+- [Share](https://pub.dev/packages/share)
+- [Facebook Login](https://pub.dev/packages/flutter_facebook_login)
+- [HTTP](https://pub.dev/packages/http)
 
 ## Como utilizar? 
 
