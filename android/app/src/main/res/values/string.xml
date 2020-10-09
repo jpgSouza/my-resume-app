@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Resume</string>
+    <string name="facebook_app_id">387784762379773</string>
+    <string name="fb_login_protocol_scheme">fb387784762379773</string>
+</resources>

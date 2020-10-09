@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:my_resume_app/constants.dart';
 import 'package:my_resume_app/src/database/firebase.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
@@ -9,6 +8,7 @@ import 'package:share/share.dart';
 
 class PdfService {
   final doc = pw.Document();
+
   String URL;
   FirebaseDB _firebaseDB;
 
