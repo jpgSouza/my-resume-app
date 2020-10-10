@@ -37,7 +37,7 @@ dependencies:
   image_cropper: ^1.0.2
   pdf: ^1.11.2
   firebase_storage: ^3.0.4
-  # share: ^0.6.5+2
+  share: ^0.6.5+2
   flutter_facebook_login: ^3.0.0
   google_sign_in: ^4.5.4
   http: ^0.12.2

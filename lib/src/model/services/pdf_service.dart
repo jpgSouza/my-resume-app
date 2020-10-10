@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:my_resume_app/src/database/firebase.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
-// import 'package:share/share.dart';
+import 'package:share/share.dart';
 
 class PdfService {
   final doc = pw.Document();
@@ -80,9 +80,8 @@ class PdfService {
   void share(BuildContext context, DocumentSnapshot resumeSnapshot) async {
     await _generatePdf(resumeSnapshot);
     final RenderBox box = context.findRenderObject();
-    /*
     Share.share(URL,
         subject: 'My resume',
-        sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size);*/
+        sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size);
   }
 }
