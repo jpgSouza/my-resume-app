@@ -3,4 +3,17 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" group="android" />
-      <module fileurl="fil
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="android/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1650990855/cloud_firestore.iml" filepath="$PROJECT_DIR$/.idea/modules/1650990855/cloud_firestore.iml" group="android/cloud_firestore" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2015571330/firebase_auth.iml" filepath="$PROJECT_DIR$/.idea/modules/2015571330/firebase_auth.iml" group="android/firebase_auth" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1748411925/firebase_core.iml" filepath="$PROJECT_DIR$/.idea/modules/-1748411925/firebase_core.iml" group="android/firebase_core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-393511280/firebase_storage.iml" filepath="$PROJECT_DIR$/.idea/modules/-393511280/firebase_storage.iml" group="android/firebase_storage" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2102552505/flutter_facebook_login.iml" filepath="$PROJECT_DIR$/.idea/modules/2102552505/flutter_facebook_login.iml" group="android/flutter_facebook_login" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/203865947/flutter_plugin_android_lifecycle.iml" filepath="$PROJECT_DIR$/.idea/modules/203865947/flutter_plugin_android_lifecycle.iml" group="android/flutter_plugin_android_lifecycle" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-671122639/google_sign_in.iml" filepath="$PROJECT_DIR$/.idea/modules/-671122639/google_sign_in.iml" group="android/google_sign_in" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1843205895/image_cropper.iml" filepath="$PROJECT_DIR$/.idea/modules/-1843205895/image_cropper.iml" group="android/image_cropper" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1821184823/image_picker.iml" filepath="$PROJECT_DIR$/.idea/modules/-1821184823/image_picker.iml" group="android/image_picker" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/695091100/share.iml" filepath="$PROJECT_DIR$/.idea/modules/695091100/share.iml" group="android/share" />
+    </modules>
+  </component>
+</project>
