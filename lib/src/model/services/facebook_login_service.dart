@@ -1,11 +1,8 @@
 import 'dart:convert';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:my_resume_app/src/database/firebase.dart';
 import 'package:http/http.dart' as http;
-
-enum FacebookStatus { IDDLE, LOADING, SUCCESS, FAIL }
 
 class FacebookLoginService {
   static final _facebookLogin = FacebookLogin();
@@ -15,11 +12,9 @@ class FacebookLoginService {
 
   FacebookLoginService() {
     _firebaseDB = FirebaseDB();
-    FacebookStatus.IDDLE;
   }
 
   Future<FirebaseUser> _loginWithFacebook() async {
-    FacebookStatus.LOADING;
     final FacebookLoginResult _result = await _facebookLogin.logIn(['email']);
 
     switch (_result.status) {
@@ -33,16 +28,13 @@ class FacebookLoginService {
         _firebaseDB.firebaseUser = await _firebaseDB.firebaseAuth
             .signInWithCredential(facebookAuthCred);
         return _firebaseDB.firebaseUser;
-        FacebookStatus.SUCCESS;
         break;
 
       case FacebookLoginStatus.error:
         return null;
-        FacebookStatus.FAIL;
         break;
       case FacebookLoginStatus.cancelledByUser:
         return null;
-        FacebookStatus.FAIL;
         break;
     }
   }

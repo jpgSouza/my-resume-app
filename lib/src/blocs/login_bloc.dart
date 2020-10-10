@@ -1,11 +1,9 @@
 import 'dart:async';
 
 import 'package:bloc_pattern/bloc_pattern.dart';
-import 'package:flutter/material.dart';
 import 'package:my_resume_app/src/database/firebase.dart';
 import 'package:my_resume_app/src/model/entities/user_model.dart';
 import 'package:my_resume_app/src/model/validators/user_input_validator.dart';
-import 'package:my_resume_app/src/views/auth/login_view.dart';
 import 'package:rxdart/rxdart.dart';
 
 enum LoginState { IDLE, LOADING, SUCCESS, FAIL }

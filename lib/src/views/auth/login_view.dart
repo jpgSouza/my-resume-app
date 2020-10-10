@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_resume_app/constants.dart';
 import 'package:my_resume_app/src/blocs/login_bloc.dart';
 import 'package:my_resume_app/src/model/services/facebook_login_service.dart';
+import 'package:my_resume_app/src/model/services/google_login_service.dart';
 import 'package:my_resume_app/src/views/auth/register_view.dart';
 import 'package:my_resume_app/src/views/widgets/custom_divider.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_box.dart';
@@ -18,6 +19,7 @@ class _LoginViewState extends State<LoginView> {
   final _loginBloc = LoginBloc();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   final FacebookLoginService _facebookLoginService = FacebookLoginService();
+  final GoogleLoginService _googleLoginService = GoogleLoginService();
 
   @override
   void initState() {
@@ -214,7 +216,7 @@ class _LoginViewState extends State<LoginView> {
                                     height: 52.0,
                                     alignment: Alignment.center,
                                     child: GestureDetector(
-                                        onTap: () {},
+                                        onTap: _googleLoginService.logIn,
                                         child: SvgPicture.asset(
                                             "assets/icons/googlesignin.svg",
                                             fit: BoxFit.fill)),
