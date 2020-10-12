@@ -4,7 +4,7 @@ import 'package:my_resume_app/src/database/firebase.dart';
 
 class GoogleLoginService {
   final _googleLogin = GoogleSignIn();
-
+  Map<String, dynamic> _googleData = Map();
   FirebaseDB _firebaseDB;
 
   GoogleLoginService() {
@@ -26,6 +26,11 @@ class GoogleLoginService {
         .then((user) {
       _firebaseDB.firebaseUser = user;
     });
+
+    _googleData = {
+      'name': _firebaseDB.firebaseUser.displayName,
+      'email': _firebaseDB.firebaseUser.email,
+    };
   }
 
   void logout() async {
@@ -37,6 +42,7 @@ class GoogleLoginService {
     _loginWithGoogle().then((user) {
       if (user != null) {
         _firebaseDB.firebaseUser = user;
+        _firebaseDB.saveOnCloudFirestore(_googleData, 'users');
       }
     });
   }

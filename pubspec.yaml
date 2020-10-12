@@ -22,8 +22,7 @@ environment:
 
 dependencies:
   flutter:
-    sdk: flutter
-    
+    sdk: flutter    
   flutter_svg: ^0.19.0
   curved_navigation_bar: ^0.3.4
   cupertino_icons: ^1.0.0
@@ -41,6 +40,7 @@ dependencies:
   flutter_facebook_login: ^3.0.0
   google_sign_in: ^4.5.4
   http: ^0.12.2
+  flutter_launcher_icons: ^0.8.1
 
 dev_dependencies:
   flutter_test:
@@ -89,3 +89,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/app-icon.png"

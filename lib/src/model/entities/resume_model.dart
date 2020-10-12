@@ -4,7 +4,7 @@ import 'package:my_resume_app/src/model/entities/course_model.dart';
 import 'package:my_resume_app/src/model/entities/skill_model.dart';
 
 class Resume {
-  File profilePic;
+  String profilePicURL;
   String title;
   String fullName;
   String phone;

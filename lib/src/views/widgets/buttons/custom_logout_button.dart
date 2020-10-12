@@ -2,11 +2,13 @@ import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
 import 'package:my_resume_app/src/blocs/login_bloc.dart';
+import 'package:my_resume_app/src/database/firebase.dart';
 import 'package:my_resume_app/src/views/auth/login_view.dart';
 
 class LogoutButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final FirebaseDB db = FirebaseDB();
     final _loginBloc = BlocProvider.of<LoginBloc>(context);
     return Container(
       height: 55.0,
