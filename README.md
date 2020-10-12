@@ -49,6 +49,7 @@ As seguintes bibliotecas foram usadas na construção do projeto:
 - [PDF](https://pub.dev/packages/pdf)
 - [Share](https://pub.dev/packages/share)
 - [Facebook Login](https://pub.dev/packages/flutter_facebook_login)
+- [Google Login](https://pub.dev/packages/google_sign_in)
 - [HTTP](https://pub.dev/packages/http)
 
 # Como utilizar? 
