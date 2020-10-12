@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.com/jpgSouza/my-resume-app.svg?token=wyUxFzK3GQM9rcK5MWCA&branch=master)](https://travis-ci.com/jpgSouza/my-resume-app)
 ![Dart CI](https://github.com/jpgSouza/my-resume-app/workflows/Dart%20CI/badge.svg)
 [![codecov](https://codecov.io/gh/jpgSouza/my-resume-app/branch/master/graph/badge.svg?token=A20KNDBCJC)](undefined)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/jpgSouza/my-resume-app)
 
 <h1 align="center">My Resume </h1>
 <p align="center">Aplicativo feito para vaga de estágio na empresa Leucotron.</p>
@@ -16,7 +17,7 @@
 
 <p align="left">O aplicativo desenvolvido é uma plataforma onde o usuário pode armazenar seu currículo com suas competências, cursos e habilidades. Desenvolvido com a ferramenta Flutter na linguagem Dart. A aplicação contam com o banco de dados Firebase para armazenamento de todas as informações.</p>
 
-## Funcionalidades
+## 🎯 Funcionalidades
 A aplicação conta com algumas funcionalidades já implementadas:
 - [X] Cadastro do usuário.
 - [X] Autenticação por e-mail e senha.
@@ -29,7 +30,7 @@ A aplicação conta com algumas funcionalidades já implementadas:
 - [X] Excluir currículo.
 - [X] Compartilhar currículo via formato pdf.
 
-## Ferramentas
+## ⚒️ Ferramentas 
 As seguintes ferramentas foram usadas na construção do projeto:
 - [Flutter](https://flutter.dev)
 - [Firebase](https://firebase.google.com)
@@ -38,7 +39,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Github Actions](https://github.com/features/actions)
 - [Codecov](https://codecov.io)
 
-## Bibliotecas
+## 📚 Bibliotecas
 As seguintes bibliotecas foram usadas na construção do projeto:
 - [BLoC](https://pub.dev/packages/bloc)
 - [Rx Dart](https://pub.dev/packages/rxdart)
@@ -52,9 +53,9 @@ As seguintes bibliotecas foram usadas na construção do projeto:
 - [Google Login](https://pub.dev/packages/google_sign_in)
 - [HTTP](https://pub.dev/packages/http)
 
-# Como utilizar? 
+# 📲 Como utilizar? 
 
-## Via código fonte
+## ▶️ Via código fonte
 
 ### Requisitos
  - Visual studio code ou Android Studio
@@ -74,7 +75,7 @@ $ flutter doc
 $ git clone https://github.com/jpgSouza/my-resume-app.git
 ```
 
-## Via APK
+## ▶️ Via APK
 
 ### Requisitos
  - Dispositivo Android (SDK mínimo 16)
