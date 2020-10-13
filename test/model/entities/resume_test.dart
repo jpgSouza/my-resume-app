@@ -5,6 +5,7 @@ import 'package:my_resume_app/src/model/entities/skill_model.dart';
 
 void main() {
   Resume resume = new Resume(
+      null,
       'Leucotron - CV',
       'Joao Pedro',
       '123456',
