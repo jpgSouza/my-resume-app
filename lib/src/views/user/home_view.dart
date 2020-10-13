@@ -2,7 +2,6 @@ import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
 import 'package:my_resume_app/src/blocs/resume_bloc.dart';
-import 'package:my_resume_app/src/model/services/pdf_service.dart';
 import 'package:my_resume_app/src/views/widgets/custom_notifier.dart';
 import 'package:my_resume_app/src/views/widgets/form/custom_input_fields.dart';
 import 'package:my_resume_app/src/views/widgets/tiles/custom_resume_list.dart';

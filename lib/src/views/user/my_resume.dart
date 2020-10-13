@@ -98,6 +98,21 @@ class _MyResumeState extends State<MyResume> {
                                     RoundedButton(
                                         GestureDetector(
                                           onTap: () {
+                                            _scaffoldKey.currentState
+                                                .showSnackBar(SnackBar(
+                                                    content: Text(
+                                                      "Campos habilitados",
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
+                                                    elevation: 6.0,
+                                                    backgroundColor:
+                                                        Colors.blue,
+                                                    duration:
+                                                        Duration(seconds: 2)));
                                             setState(() {
                                               _enableField = true;
                                             });
@@ -139,8 +154,10 @@ class _MyResumeState extends State<MyResume> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     CircleAvatar(
-                                        radius: 35.0,
-                                        backgroundColor: Colors.black),
+                                      radius: 35.0,
+                                      backgroundImage: NetworkImage(
+                                          '${widget.resume.data['url']}'),
+                                    ),
                                     SizedBox(
                                       width: 16.0,
                                     ),

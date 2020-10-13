@@ -4,7 +4,7 @@ import 'package:my_resume_app/src/model/entities/course_model.dart';
 import 'package:my_resume_app/src/model/entities/skill_model.dart';
 
 class Resume {
-  String profilePicURL;
+  String imageURL;
   String title;
   String fullName;
   String phone;
@@ -12,13 +12,14 @@ class Resume {
   Skill skill;
   Course course;
 
-  Resume(this.title, this.fullName, this.phone, this.email, this.skill,
-      this.course);
+  Resume(this.imageURL, this.title, this.fullName, this.phone, this.email,
+      this.skill, this.course);
 
   Resume.def();
 
   Map<String, dynamic> toMap() {
     return {
+      'url': imageURL,
       'title': title,
       'fullName': fullName,
       'phone': phone,

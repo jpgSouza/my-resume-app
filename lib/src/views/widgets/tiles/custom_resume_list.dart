@@ -31,7 +31,7 @@ class ResumeTile extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 25.0,
-                backgroundColor: Colors.black,
+                backgroundImage: NetworkImage('${resume.data['url']}'),
               ),
               SizedBox(
                 width: 22.0,

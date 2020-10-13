@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:my_resume_app/src/database/firebase.dart';
 import 'package:my_resume_app/src/model/entities/course_model.dart';
 import 'package:my_resume_app/src/model/entities/resume_model.dart';
@@ -110,7 +113,7 @@ class ResumeBloc extends BlocBase with ResumeInputValidator {
     });
   }
 
-  void createResume() async {
+  void createResume(File image) async {
     String title = _titleController.value;
     String fullName = _fullNameController.value;
     String phone = _phoneController.value;
@@ -121,7 +124,10 @@ class ResumeBloc extends BlocBase with ResumeInputValidator {
     String courseDate = _courseDateController.value;
     String courseInstitute = _courseInstituteController.value;
 
+    String URL = await _uploadImage(image);
+
     resume = new Resume(
+        URL,
         title,
         fullName,
         phone,
@@ -178,6 +184,7 @@ class ResumeBloc extends BlocBase with ResumeInputValidator {
         : _courseInstituteController.value;
 
     resume = new Resume(
+        resumeSnapshot.data['url'],
         resumeSnapshot.documentID,
         fullName,
         phone,
@@ -218,5 +225,16 @@ class ResumeBloc extends BlocBase with ResumeInputValidator {
           .contains(search.toUpperCase());
     });
     return filteredResumes;
+  }
+
+  Future<String> _uploadImage(File image) async {
+    StorageUploadTask upload = firebaseDB.firebaseStorage
+        .ref()
+        .child('images')
+        .child(DateTime.now().millisecondsSinceEpoch.toString())
+        .putFile(image);
+
+    StorageTaskSnapshot taskSnapshot = await upload.onComplete;
+    return await taskSnapshot.ref.getDownloadURL();
   }
 }

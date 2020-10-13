@@ -6,7 +6,7 @@ import 'package:image_picker/image_picker.dart';
 
 class ImageSourceSheet extends StatelessWidget {
   final Function(File) onImageSelected;
-  ImageSourceSheet(this.onImageSelected);
+  ImageSourceSheet({this.onImageSelected});
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +35,8 @@ class ImageSourceSheet extends StatelessWidget {
 
   void imageSelected(File image) async {
     if (image != null) {
-      File croppedImage = await ImageCropper.cropImage(sourcePath: image.path);
-      onImageSelected(croppedImage);
+      //File croppedImage = await ImageCropper.cropImage(sourcePath: image.path);
+      onImageSelected(image);
     }
   }
 }

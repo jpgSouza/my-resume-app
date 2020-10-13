@@ -221,6 +221,8 @@ class _RegisterViewState extends State<RegisterView> {
                       ),
                     ),
                   );
+                default:
+                  return CircularProgressIndicator();
               }
             }));
   }

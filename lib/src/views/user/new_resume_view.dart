@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_resume_app/constants.dart';
 import 'package:my_resume_app/masks.dart';
 import 'package:my_resume_app/src/blocs/resume_bloc.dart';
@@ -16,7 +19,7 @@ class NewResume extends StatefulWidget {
 class _NewResumeState extends State<NewResume> {
   final _resumeBloc = ResumeBloc();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-
+  File _image;
   @override
   void initState() {
     super.initState();
@@ -80,11 +83,23 @@ class _NewResumeState extends State<NewResume> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             FlatButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                showModalBottomSheet(
+                                    context: context,
+                                    builder: (context) => ImageSourceSheet(
+                                          onImageSelected: (image) {
+                                            setState(() {
+                                              this._image = image;
+                                            });
+                                          },
+                                        ));
+                              },
                               child: CircleAvatar(
-                                radius: 35.0,
-                                backgroundColor: Colors.black,
-                              ),
+                                  radius: 35.0,
+                                  backgroundImage: this._image == null
+                                      ? AssetImage(
+                                          'assets/images/profile-pic.png')
+                                      : FileImage(this._image)),
                             ),
                             Container(
                                 margin: EdgeInsets.symmetric(horizontal: 50.0),
@@ -274,7 +289,9 @@ class _NewResumeState extends State<NewResume> {
                         height: 55.0,
                         alignment: Alignment.center,
                         child: RaisedButton(
-                          onPressed: _resumeBloc.createResume,
+                          onPressed: () {
+                            _resumeBloc.createResume(this._image);
+                          },
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8.0)),
                           padding: EdgeInsets.all(0.0),
