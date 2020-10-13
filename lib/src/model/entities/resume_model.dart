@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:my_resume_app/src/model/entities/course_model.dart';
 import 'package:my_resume_app/src/model/entities/skill_model.dart';
 

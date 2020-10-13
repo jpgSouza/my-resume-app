@@ -84,6 +84,8 @@ class ResumeBloc extends BlocBase with ResumeInputValidator {
     _courseTitleController.close();
     _courseDateController.close();
     _courseInstituteController.close();
+
+    _stateController.close();
   }
 
   void _addResumeListener() {
@@ -114,6 +116,7 @@ class ResumeBloc extends BlocBase with ResumeInputValidator {
   }
 
   void createResume(File image) async {
+    _stateController.add(ResumeState.LOADING);
     String title = _titleController.value;
     String fullName = _fullNameController.value;
     String phone = _phoneController.value;
@@ -136,8 +139,6 @@ class ResumeBloc extends BlocBase with ResumeInputValidator {
         new Course(courseTitle, courseDate, courseInstitute));
 
     resumeData = resume.toMap();
-
-    _stateController.add(ResumeState.LOADING);
 
     await saveResumeOnCloud(title, resumeData);
   }
