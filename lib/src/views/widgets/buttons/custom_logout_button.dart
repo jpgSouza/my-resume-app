@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:my_resume_app/constants.dart';
 import 'package:my_resume_app/src/blocs/login_bloc.dart';
 import 'package:my_resume_app/src/database/firebase.dart';
+import 'package:my_resume_app/src/model/services/facebook_login_service.dart';
+import 'package:my_resume_app/src/model/services/google_login_service.dart';
 import 'package:my_resume_app/src/views/auth/login_view.dart';
 
 class LogoutButton extends StatelessWidget {
@@ -10,6 +12,8 @@ class LogoutButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final FirebaseDB db = FirebaseDB();
     final _loginBloc = BlocProvider.of<LoginBloc>(context);
+    final _facebookLogin = FacebookLoginService();
+    final _googleLogin = GoogleLoginService();
     return Container(
       height: 55.0,
       alignment: Alignment.center,
@@ -30,7 +34,9 @@ class LogoutButton extends StatelessWidget {
             ),
             borderSide: BorderSide(color: buttonColor, width: 2),
             shape: StadiumBorder(),
-            onPressed: () {
+            onPressed: () async {
+              await _facebookLogin.logout();
+              await _googleLogin.logout();
               _loginBloc.logout();
               Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => LoginView()));
